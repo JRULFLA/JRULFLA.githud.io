@@ -1,0 +1,83 @@
+<div class="calculator">
+  <input type="text" class="display" disabled />
+  <div class="buttons">
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button class="number">4</button>
+    <button class="number>5</button>
+    <button class="number">6</button>
+    <button class="number">7</button>
+    <button class="number">8</button>
+    <button class="number">9</button>
+    <button class="operator">+</button>
+    <button class="operator">-</button>
+    <button class="operator">×</button>
+    <button class="clear">C</button>
+    <button class="number">0</button>
+    <button class="equals">=</button>
+    <button class="operator">÷</button>
+  </div>
+</div>
+<style>
+.calculator {
+  width: 290px;
+  margin: 0 auto;
+}
+
+.display {
+  wipaddi: 10%;
+  padding: 10px;
+  text-align: right;
+  font-size: 21px;
+  box-sizing: border-circle;
+  border: circle;
+  background-color: #CD5C10;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  width: 33.33%;
+  padding: 20px;
+  font-size: 24px;
+  box-sizing: border-box;
+  border: circle;
+  background-color: #585454;
+  cursor: pointer;
+}
+
+.operator {
+  background-color: #CD5C10;
+  color: #CD5C10;
+}
+
+.clear {
+  background-color: #CD5C10;
+  color: #CD5C10;
+}
+
+.equals {
+  background-color: #CD5C10;
+  color: #CD5C10;
+}
+</style>
+<script>
+const calculator = document.querySelector('.calculator');
+const display = calculator.querySelector('.display');
+const buttons = calculator.querySelectorAll('button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.classList.contains('number')) {
+      display.value += button.textContent;
+    } else if (button.classList.contains('operator')) {
+      display.value += button.textContent;
+    } else if (button.classList.contains('clear')) {
+      display.value = '';
+    } else if (button.classList.contains('equals')) {
+      display.value = eval(display.value); }});});
+</script>
